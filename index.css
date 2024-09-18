@@ -1,0 +1,171 @@
+.header {
+    background-color: #cceeff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #b3e5fc;
+}
+
+.header h1 {
+    font-size: 2em;
+    color: #a482c4;
+    margin-left: 10px;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    margin-right: 10px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+body {
+    background-color: #fce4ec;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header & Banner */
+header {
+    background-color: #ffe0b2;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #000;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #00796b;
+}
+
+.banner {
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+}
+
+/* Neuro Toys Section */
+.neuro-toys {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff3e0;
+}
+
+.neuro-toys h2 {
+    font-size: 2rem;
+    color: #000;
+}
+
+/* Carousel Section */
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    background-color: #f8bbd0;
+    text-align: center;
+}
+
+.carousel-container {
+    display: flex;
+    width: 400%;
+    animation: slide 15s infinite;
+}
+
+.carousel-container img {
+    width: 100%;
+    flex: 1;
+}
+
+@keyframes slide {
+    0% {transform: translateX(0%);}
+    25% {transform: translateX(-100%);}
+    50% {transform: translateX(-200%);}
+    75% {transform: translateX(-300%);}
+    100% {transform: translateX(0%);}
+}
+
+/* New Toys Section */
+.new-toys {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    background-color: #ffe0b2;
+}
+
+.new-toys .toy {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.new-toys img {
+    max-width: 150px;
+}
+
+.new-toys p {
+    font-size: 1rem;
+    color: #00796b;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #67f5dd;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8bbd0;
+}
+
+footer form {
+    margin-top: 10px;
+}
+
+footer input[type="email"] {
+    padding: 10px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+}
+
+footer button {
+    padding: 10px;
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+footer button:hover {
+    background-color: #004d40;
+}
