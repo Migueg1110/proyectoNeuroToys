@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8c4e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+}
+.phone-container {
+    width: 375px;
+    height: 700px;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+    background-color: #f8c4e0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.header i {
+    font-size: 20px;
+}
+.header .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+.container {
+    padding: 20px;
+}
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.profile-section i {
+    font-size: 50px;
+    margin-right: 10px;
+}
+.profile-section a {
+    margin-left: auto;
+    text-decoration: none;
+    color: #000;
+}
+.profile-section a i {
+    margin-left: 5px;
+}
+.info-section {
+    margin-bottom: 20px;
+}
+.info-section p {
+    margin: 5px 0;
+}
+.info-section .label {
+    font-weight: bold;
+}
+.info-section .value {
+    font-style: italic;
+}
+.divider {
+    border-top: 1px solid #000;
+    margin: 20px 0;
+}

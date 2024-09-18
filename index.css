@@ -82,6 +82,15 @@ header p {
     text-align: center;
 }
 
+.carousel-slide {
+    display: flex;
+    flex-direction: row;
+}
+
+.carousel-slide img {
+    height: 80%;
+}
+
 .carousel-container {
     display: flex;
     width: 400%;
@@ -89,15 +98,26 @@ header p {
 }
 
 .carousel-container img {
-    width: 100%;
+    width: 300px;
+    margin: 25px;
     flex: 1;
+
+    border-radius: 10px;
+}
+
+.carousel-card {
+    
+}
+
+.carousel-card p {
+    margin: 0;
 }
 
 @keyframes slide {
     0% {transform: translateX(0%);}
-    25% {transform: translateX(-100%);}
-    50% {transform: translateX(-200%);}
-    75% {transform: translateX(-300%);}
+    25% {transform: translateX(-20%);}
+    50% {transform: translateX(-40%);}
+    75% {transform: translateX(-60%);}
     100% {transform: translateX(0%);}
 }
 

@@ -1,0 +1,172 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8c4e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 290vh;
+}
+.container {
+    width: 375px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+    background-color: #f8c4e0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.header i {
+    font-size: 24px;
+}
+.header .title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.main {
+    padding: 20px;
+}
+.product-image {
+    text-align: center;
+}
+.product-image img {
+    width: 200px;
+}
+.description {
+    text-align: center;
+    margin-top: 20px;
+}
+.description p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+.free-shipping {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.options {
+    text-align: center;
+    margin: 20px 0;
+}
+.options select {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    border-radius: 10px;
+}
+.add-to-cart {
+    text-align: center;
+    margin: 20px 0;
+}
+.add-to-cart button {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 5px;
+}
+.add-to-cart .shopping-trolley {
+    background-color: black;
+    color: white;
+}
+.add-to-cart .buy-now {
+    background-color: #f8c4e0;
+    color: black;
+}
+.related-products {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.related-products .product {
+    text-align: center;
+}
+.related-products .product img {
+    width: 100px;
+}
+.related-products .product p {
+    font-size: 14px;
+}
+.related-products .product .price {
+    font-size: 18px;
+    font-weight: bold;
+}
+.related-products .product button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+.see-more {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    text-decoration: none;
+}
+.information {
+    background-color: #f8c4e0;
+    padding: 20px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.information p {
+    margin: 5px 0;
+}
+.information .contact {
+    margin: 20px 0;
+}
+.information .social-media {
+    margin: 20px 0;
+}
+.information .social-media i {
+    font-size: 24px;
+    margin: 0 10px;
+}
+.subscribe {
+    margin: 20px 0;
+}
+.subscribe input {
+    padding: 10px;
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+.subscribe button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+.footer {
+    text-align: center;
+    margin: 20px 0;
+}
