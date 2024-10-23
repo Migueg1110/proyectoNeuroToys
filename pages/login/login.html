@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Login</title>
     <link rel="stylesheet" href="body.css">
 </head>
+
 <body>
     <div class="login-container">
         <a href="../../index.html" class="back-button">⟵</a>
         <form action="main_page.html" class="login-form">
             <input type="email" placeholder="Email" required>
             <input type="password" placeholder="Password" required>
-            <button type="submit">Sign Up</button>
+            <button type="submit" onclick="login()">Sign Up</button>
         </form>
 
         <div class="social-login">
             <p>or</p>
             <div class="social-icons">
                 <a href="#"><img src="https://pngimg.com/uploads/instagram/instagram_PNG10.png" alt="Instagram"></a>
-                <a href="#"><img src="https://www.freepnglogos.com/uploads/twitter-x-logo-png/twitter-x-logo-png-9.png" alt="X (formerly Twitter)"></a>
-                <a href="#"><img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-1-2.png" alt="Facebook"></a>
+                <a href="#"><img src="https://www.freepnglogos.com/uploads/twitter-x-logo-png/twitter-x-logo-png-9.png"
+                        alt="X (formerly Twitter)"></a>
+                <a href="#"><img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-1-2.png"
+                        alt="Facebook"></a>
             </div>
         </div>
 
@@ -28,5 +32,8 @@
             Already have an account? <a href="../../pages/register/register.html">Log in</a>
         </p>
     </div>
+
+    <script src="./login.js"></script>
 </body>
+
 </html>
