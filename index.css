@@ -1,3 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8c4e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120vh;
+}
+
+.phone-container {
+    width: 375px;
+    min-height: 700px;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 50px;
+}
+
+.phone-container h1 {
+    color: #4F4434;
+    width: 100%;
+    text-align: center;
+}
+
 .header {
     background-color: #cceeff;
     padding: 10px;
@@ -15,8 +42,11 @@
 
 .icons {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 15px;
     margin-right: 10px;
+    width: 100%;
 }
 
 .icon {
@@ -106,7 +136,16 @@ header p {
 }
 
 .carousel-card {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.carousel-card button {
+    width: 200px;
 }
 
 .carousel-card p {
@@ -115,16 +154,18 @@ header p {
 
 @keyframes slide {
     0% {transform: translateX(0%);}
-    25% {transform: translateX(-20%);}
-    50% {transform: translateX(-40%);}
-    75% {transform: translateX(-60%);}
+    25% {transform: translateX(-25%);}
+    50% {transform: translateX(-48%);}
+    75% {transform: translateX(-70%);}
     100% {transform: translateX(0%);}
 }
 
 /* New Toys Section */
 .new-toys {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     padding: 40px;
     background-color: #ffe0b2;
@@ -136,6 +177,7 @@ header p {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80%;
 }
 
 .new-toys img {
