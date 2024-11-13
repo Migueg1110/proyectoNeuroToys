@@ -4,6 +4,12 @@ console.log(data)
 let products = []
 let cart = []
 
+function guardarDatos() {
+    localStorage.setItem("nombre", "Juan");
+    localStorage.setItem("edad", "30");
+    document.getElementById("mensaje").innerText = "Datos guardados en localStorage.";
+}
+
 function parseDataToProducts() {
     console.log("parseDataToProduct")
     for (let i = 0; i < data.length; i++) {
@@ -24,11 +30,21 @@ function renderAllProducts() {
         const btn = document.createElement('button')
         btn.textContent = 'Add to cart'
         btn.addEventListener('click', () => {
-            console.log('products', products);
-            let product = new Product(data[i].Title, data[i].Price, data[i].Photo)
-            cart.push(product)
-            console.log('carrito', cart);
-            
+            const loggedUserCart = localStorage.getItem('logedUserCart')
+            console.log(loggedUserCart);
+
+            if (loggedUserCart) {
+                const JSONLoggedUserCart = JSON.parse(loggedUserCart)
+                // constructor(id, title, price, description, image)
+                const newProduct = new Product(data[i].id, data[i].Title, data[i].Price, data[i].description, data[i].Photo)
+                JSONLoggedUserCart.push(newProduct)
+                localStorage.setItem('logedUserCart', JSON.stringify(JSONLoggedUserCart))
+            } else {
+                const newLoggedUserCart = []
+                const newProduct = new Product(data[i].id, data[i].Title, data[i].Price, data[i].description, data[i].Photo)
+                newLoggedUserCart.push(newProduct)
+                localStorage.setItem('logedUserCart', JSON.stringify(newLoggedUserCart))
+            }
         })
         let product = products[i]
         card.innerHTML += product.htmlCard()
