@@ -1,37 +1,47 @@
-console.log("Hola")
-console.log(data)
+// console.log("Hola")
+// console.log(data)
 
-let products = []
-let cart = []
+// let cart = []
 
-function guardarDatos() {
-    localStorage.setItem("nombre", "Juan");
-    localStorage.setItem("edad", "30");
-    document.getElementById("mensaje").innerText = "Datos guardados en localStorage.";
-}
+// function guardarDatos() {
+//     localStorage.setItem("nombre", "Juan");
+//     localStorage.setItem("edad", "30");
+//     document.getElementById("mensaje").innerText = "Datos guardados en localStorage.";
+// }
 
-function parseDataToProducts() {
-    console.log("parseDataToProduct")
-    for (let i = 0; i < data.length; i++) {
-        console.log(i)
-        console.log(data[i])
-        let map = data[i]
-        console.log(map)
-        let product = new Product(data[i].Title, data[i].Title, data[i].Price, data[i].description, data[i].Photo)
+async function parseDataToProducts() {
+    // console.log("parseDataToProduct")
+    const response = await fetch('http://localhost:5050/products')
+    const jsonResponse = await response.json()
+    // console.log("jsonResponse: ", jsonResponse)
+
+    const products = []
+
+    for (let i = 0; i < jsonResponse.length; i++) {
+        const productList = jsonResponse[i]
+        // console.log(i)
+        // console.log(data[i])
+        // let map = data[i]
+        // console.log(map)
+        // console.log(productList)
+        const product = new Product(productList.id, productList.title, productList.price, productList.description, productList.image)
         products.push(product)
     }
+
+    renderAllProducts(products)
 }
 
-function renderAllProducts() {
-    console.log("renderAllProducts")
-    let container = document.getElementById("product-grid")
-    for (let i = 0; i < products.length; i++) {
+async function renderAllProducts(fetchProductList) {
+    // console.log("renderAllProducts")
+    const container = document.getElementById("product-grid")
+
+    for (let i = 0; i < fetchProductList.length; i++) {
         const card = document.createElement('section')
         const btn = document.createElement('button')
         btn.textContent = 'Add to cart'
         btn.addEventListener('click', () => {
             const loggedUserCart = localStorage.getItem('logedUserCart')
-            console.log(loggedUserCart);
+            // console.log(loggedUserCart);
 
             if (loggedUserCart) {
                 const JSONLoggedUserCart = JSON.parse(loggedUserCart)
@@ -46,7 +56,7 @@ function renderAllProducts() {
                 localStorage.setItem('logedUserCart', JSON.stringify(newLoggedUserCart))
             }
         })
-        let product = products[i]
+        const product = fetchProductList[i]
         card.innerHTML += product.htmlCard()
         card.appendChild(btn)
         container.appendChild(card)
@@ -54,4 +64,3 @@ function renderAllProducts() {
 }
 
 parseDataToProducts()
-renderAllProducts()
