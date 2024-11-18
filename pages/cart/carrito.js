@@ -15,9 +15,11 @@ class Product {
                 height="150"
                 src="${this.image}"
                 width="150" />
-            <p>${this.title}</p>
-            <p class="cartDesc">${this.description}</p>
-            <p class="price">${this.price}</p>
+            <div class="productTextContainer">
+                <h3>${this.title}</h3>
+                <p class="cartDesc">${this.description}</p>
+                <p class="price">Price: ${this.price}</p>
+            </div>
         `;
         return div; // Ahora devuelve un nodo HTML
     }

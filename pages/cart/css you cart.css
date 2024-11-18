@@ -72,6 +72,7 @@ body {
 .cartDesc {
     text-overflow: ellipsis;
     height: 10vh;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -148,4 +149,18 @@ body {
 .product {
     display: flex;
     text-overflow: clip;
+}
+
+.productTextContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.productTextContainer h3 {
+    margin: 0;
+    font-weight: bolder;
+}
+
+.productTextContainer p {
+    margin: 0;
 }

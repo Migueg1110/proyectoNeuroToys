@@ -39,13 +39,21 @@ async function renderAllProducts(fetchProductList) {
         const card = document.createElement('section')
         const btn = document.createElement('button')
         btn.textContent = 'Add to cart'
-        btn.addEventListener('click', () => {
+
+        card.addEventListener('click', (e) => {
+            e.stopPropagation()
+            const id = fetchProductList[i].id;
+            window.location = `../info/html info.html?id=${id}`;
+        });
+
+
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation()
             const loggedUserCart = localStorage.getItem('logedUserCart')
-            // console.log(loggedUserCart);
 
             if (loggedUserCart) {
                 const JSONLoggedUserCart = JSON.parse(loggedUserCart)
-                // constructor(id, title, price, description, image)
                 const newProduct = new Product(data[i].id, data[i].Title, data[i].Price, data[i].description, data[i].Photo)
                 JSONLoggedUserCart.push(newProduct.id)
                 localStorage.setItem('logedUserCart', JSON.stringify(JSONLoggedUserCart))
@@ -56,6 +64,7 @@ async function renderAllProducts(fetchProductList) {
                 localStorage.setItem('logedUserCart', JSON.stringify(newLoggedUserCart))
             }
         })
+
         const product = fetchProductList[i]
         card.innerHTML += product.htmlCard()
         card.appendChild(btn)
