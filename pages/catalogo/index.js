@@ -47,12 +47,12 @@ async function renderAllProducts(fetchProductList) {
                 const JSONLoggedUserCart = JSON.parse(loggedUserCart)
                 // constructor(id, title, price, description, image)
                 const newProduct = new Product(data[i].id, data[i].Title, data[i].Price, data[i].description, data[i].Photo)
-                JSONLoggedUserCart.push(newProduct)
+                JSONLoggedUserCart.push(newProduct.id)
                 localStorage.setItem('logedUserCart', JSON.stringify(JSONLoggedUserCart))
             } else {
                 const newLoggedUserCart = []
                 const newProduct = new Product(data[i].id, data[i].Title, data[i].Price, data[i].description, data[i].Photo)
-                newLoggedUserCart.push(newProduct)
+                newLoggedUserCart.push(newProduct.id)
                 localStorage.setItem('logedUserCart', JSON.stringify(newLoggedUserCart))
             }
         })

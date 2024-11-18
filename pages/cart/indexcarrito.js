@@ -1,40 +1,54 @@
-const deleteCartButton = document.getElementById('deleteCartButton')
+const deleteCartButton = document.getElementById('deleteCartButton');
 const container = document.getElementById("productCartContainer");
 
+async function parseDataToProducts() {
+    try {
+        const response = await fetch('http://localhost:5050/products');
+        if (!response.ok) throw new Error('Error al obtener los productos');
 
-function renderAllProducts() {
+        const jsonResponse = await response.json();
 
-    // Obtener el carrito del usuario logueado
+        const products = jsonResponse.map(
+            product => new Product(product.id, product.title, product.price, product.description, product.image)
+        );
+
+        renderAllProducts(products);
+    } catch (error) {
+        console.error('Hubo un error:', error);
+        container.innerText = "Error al cargar los productos.";
+    }
+}
+
+function renderAllProducts(fetchProductList) {
     const loggedUserCart = localStorage.getItem('logedUserCart');
-    console.log(loggedUserCart)
+
     if (loggedUserCart) {
         const JSONloggedUserCart = JSON.parse(loggedUserCart);
 
-        
-        console.log(JSONloggedUserCart);
-        JSONloggedUserCart.forEach((cartProduct) => {
-            console.log(cartProduct);
-            const product = new Product(cartProduct.id, cartProduct.title, cartProduct.price, cartProduct.description, cartProduct.image);
+        const dataCart = fetchProductList.filter(product =>
+            JSONloggedUserCart.includes(product.id)
+        );
 
-            // Ahora productHTML es un nodo, no una cadena
-            const productHTML = product.htmlCard();
-            console.log(productHTML);
-
-            container.appendChild(productHTML); // Sin necesidad de crear un nodo adicional
-        });
+        if (dataCart.length > 0) {
+            dataCart.forEach(product => {
+                const productHTML = product.htmlCard();
+                container.appendChild(productHTML);
+            });
+        } else {
+            container.innerText = "El carrito está vacío";
+        }
     } else {
-        container.innerText = "El carrito esta vacio"
+        container.innerText = "El carrito está vacío";
     }
 }
 
 function deleteCart() {
-    localStorage.removeItem('logedUserCart')
+    localStorage.removeItem('logedUserCart');
     window.location.reload();
-
 }
 
 deleteCartButton.addEventListener('click', () => {
-    deleteCart()
-})
+    deleteCart();
+});
 
-renderAllProducts()
+parseDataToProducts();
